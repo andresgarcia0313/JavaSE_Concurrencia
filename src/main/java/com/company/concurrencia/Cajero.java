@@ -50,12 +50,13 @@ public class Cajero extends Thread {
   private void procesarCompra() {
     // Registra la hora en la que comienza a procesar la compra
     LocalTime horaInicio = LocalTime.now();
-    System.out.println("El cajero " + this.nombre + " comienza a procesar el carrito del cliente " + cliente.getNombre()
+    System.out.println("El cajero " + this.nombre
+        + " comienza a procesar el carrito del cliente " + cliente.getNombre()
         + " a las " + horaInicio);
 
     // Itera sobre cada producto del cliente y lo procesa
     for (int i = 0; i < cliente.getProductos().length; i++) {
-      esperarProceso();// Simula el tiempo que toma procesar un producto
+      esperarProceso(); // Simula el tiempo que toma procesar un producto
       System.out.println("Se ha procesado el producto: " + (i + 1)
           + " del cliente "
           + cliente.getNombre());
@@ -76,7 +77,7 @@ public class Cajero extends Thread {
   private void esperarProceso() {
     try {
       // Hace que el hilo duerma por 1000 milisegundos (1 segundo)
-      Thread.sleep(1000);
+      Thread.sleep(3000);
     } catch (InterruptedException e) {
       // Muestra un mensaje si ocurre una interrupción durante el sueño del hilo
       System.out.println("Error al esperar: " + e);

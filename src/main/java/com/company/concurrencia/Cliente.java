@@ -7,7 +7,10 @@ package com.company.concurrencia;
  */
 public class Cliente {
 
-    // Nombre del cliente (ej. "Carolina")
+    /**
+     * El nombre del cliente.
+     * @type {String}
+     */
     private String nombre;
 
     // Array de productos que el cliente tiene en su carrito
